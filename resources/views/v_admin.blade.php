@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <!--========== BOX ICONS ==========-->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
@@ -28,13 +28,6 @@
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="/#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="/#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="/#services" class="nav__link">Services</a></li>
-                        <li class="nav__item"><a href="/#menu" class="nav__link">Menu</a></li>
-                        <li class="nav__item"><a href="/#contact" class="nav__link">Contact us</a></li>
-
-                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
                     </ul>
                 </div>
 

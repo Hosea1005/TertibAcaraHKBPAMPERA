@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!--========== BOX ICONS ==========-->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
         <!--========== CSS ==========-->
         <link rel="stylesheet" href="{{asset('assets/')}}/css/styles.css">
         {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> --}}
@@ -33,6 +34,7 @@
                         <li class="nav__item"><a href="#services" class="nav__link">Protocol</a></li>
                         <li class="nav__item"><a href="#menu" class="nav__link">List</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+                        <li class="nav__item"><a href="/admin/login/ta" class="nav__link">Admin</a></li>
 
                         <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
                     </ul>
@@ -53,19 +55,29 @@
                         <h2 class="home__subtitle">Website HKBP AMPERA</h2>
                         <a href="/tam" class="button">View Menu</a>
                     </div>
-    
+
                     <img src="{{asset('assets/')}}/img/a.png" alt="" class="home__img">
                 </div>
             </section>
-            
+
             <!--========== ABOUT ==========-->
             <section class="about section bd-container" id="about">
+                <?php
+                    $tgl=date('Y-m-d');
+                    // echo $tgl;
+                ?>
                 <div class="about__container  bd-grid">
                     <div class="about__data">
                         <span class="section-subtitle about__initial">Tertib Acara</span>
                         <h2 class="section-title about__initial">Terib Acara Mingguan</h2>
                         <p class="about__description">Tertib Acara ini dipergunakan bagi jemaat sebagai rundown dalam ibadah gereja mingguan biasa.</p>
-                        <a href="#" class="button">Explore history</a>
+
+                            @if ($tgl == $tata->date)
+                                <a href="/home/detailMingguan/{{ $tata->id }}" class="button">Lihat Acara Hari Ini</a>
+                            @else
+                            <a href="#" class="button">Tata Terib minggu ini Tidak Tersedia</a>
+                            @endif
+
                     </div>
 
                     <img src="{{asset('assets/')}}/img/m.png" alt="" class="about__img">
@@ -107,21 +119,29 @@
                 <h2 class="section-title">Jenis-Jenis TertibAcara</h2>
 
                 <div class="menu__container bd-grid">
-                    <div class="menu__content">
-                        <img src="{{asset('assets/')}}/img/m.png" alt="" class="menu__img">
-                        <h3 class="menu__name">Mingguan</h3>
-                        <span class="menu__detail">Setiap hari minggu</span>
+
+                        <div class="menu__content">
+                            <a href="/home/listMingguan">
+                                <img src="{{asset('assets/')}}/img/m.png" alt="" class="menu__img">
+                            </a>
+                            <h3 class="menu__name">Mingguan</h3>
+                            <span class="menu__detail">Setiap hari minggu</span>
                         {{-- <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a> --}}
-                    </div>
+                        </div>
+
+                        <div class="menu__content">
+                            <a href="/home/partamiangan">
+                                <img src="{{asset('assets/')}}/img/aws.png" alt="" class="menu__img">
+                            </a>
+                            <h3 class="menu__name">Partamiangan</h3>
+                            <span class="menu__detail">Acara per wijk</span>
+                        </div>
+
 
                     <div class="menu__content">
-                        <img src="{{asset('assets/')}}/img/aws.png" alt="" class="menu__img">
-                        <h3 class="menu__name">Partamiangan</h3>
-                        <span class="menu__detail">Acara per wijk</span>
-                    </div>
-                    
-                    <div class="menu__content">
-                        <img src="{{asset('assets/')}}/img/cdg.png" alt="" class="menu__img">
+                        <a href="/home/specialday">
+                            <img src="{{asset('assets/')}}/img/cdg.png" alt="" class="menu__img">
+                        </a>
                         <h3 class="menu__name">Spacial Day</h3>
                         <span class="menu__detail">Acara Natal, dan lain-lain.</span>
                     </div>

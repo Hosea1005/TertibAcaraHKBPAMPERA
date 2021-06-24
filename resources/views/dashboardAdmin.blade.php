@@ -28,13 +28,16 @@
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="/#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="/#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="/#services" class="nav__link">Services</a></li>
-                        <li class="nav__item"><a href="/#menu" class="nav__link">Menu</a></li>
-                        <li class="nav__item"><a href="/#contact" class="nav__link">Contact us</a></li>
+                        <li class="nav__item"><a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+               {{ __('Logout') }}
+           </a>
 
-                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+               @csrf
+           </form>
+                                        </li>
                     </ul>
                 </div>
 
@@ -48,6 +51,7 @@
             <div class="container">
                 <h1>Daftar Tertib Acara Mingguan</h1>
             </div>
+            <a href="/home/addAcara" class="btn btn-md btn-success">Add Tertib Acara</a>
                 <div class="table-responsive">
                     @php
                         $no = 1;
@@ -68,7 +72,9 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $data->n_minggu }}</td>
                                     <td>{{ $data->date }}</td>
-                                    <td><a href="/home/detailMingguan/{{ $data->id }}" class="btn btn-sm btn-success">Detail</a></td>
+                                    <td><a href="/home/detailMingguanAdmin/{{ $data->id }}" class="btn btn-sm btn-info">Detail</a>
+                                    <a href="/home/editMingguan/{{ $data->id }}" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="/home/deleteMingguan/{{ $data->id }}" class="btn btn-sm btn-danger">Delete</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

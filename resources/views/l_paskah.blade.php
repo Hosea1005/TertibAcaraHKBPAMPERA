@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <!--========== BOX ICONS ==========-->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
@@ -64,12 +64,20 @@
 
                         <tbody>
                             @foreach ($tata as $data)
-                                <tr>
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $data->n_minggu }}</td>
-                                    <td>{{ $data->date }}</td>
-                                    <td><a href="/home/detailMingguan/{{ $data->id }}" class="btn btn-sm btn-success">Detail</a></td>
-                                </tr>
+                            @if (!empty($tata))
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $data->n_minggu }}</td>
+                                <td>{{ $data->date }}</td>
+                                <td><a href="/home/detailMingguan/{{ $data->id }}" class="btn btn-sm btn-success">Detail</a></td>
+                            </tr>
+
+                            @else
+                                @php
+                                    echo "Data kosong";
+                                @endphp
+                            @endif
+
                             @endforeach
                         </tbody>
                     </table>

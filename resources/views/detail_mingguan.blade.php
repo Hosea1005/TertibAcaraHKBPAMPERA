@@ -28,12 +28,12 @@
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-                        <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
-
+                        <li class="nav__item"><a href="/#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="/#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="/#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="/#menu" class="nav__link">Menu</a></li>
+                        <li class="nav__item"><a href="/#contact" class="nav__link">Contact us</a></li>
+                        <li><i class=' ></i></li>
                         <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
                     </ul>
                 </div>
@@ -49,41 +49,41 @@
             <div class="container" style="background: transparent;">
                 <div class="container" style="margin-top: 10%;text-align: center;background: transparent;">
                     <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Tertib Acara HKBP AMPERA</h1>
-                    <h4>Minggu, 13 Juni 2021</h4>
+                    <h4> {{ $tata->date }}</h4>
                 </div>
                 <div class="container" style="margin-top: 2%">
-                    <h3>1. Marende BE. No.574:1-3</h3>
-                    <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <h3>1. Marende {{ $tata->e1 }}</h3>
+                    <pre>{{ $tata->le1 }}</pre>
                 </div>
 
                 <div class="container" style="margin-top: 2%">
                     <h3>2. Votum</h3>
                 </div>
                 <div class="container" style="margin-top: 2%">
-                    <h3>3. Marende BE. No.256:1</h3>
-                    <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <h3>3. Marende {{ $tata->e2 }}</h3>
+                    <pre>{{ $tata->le2 }}</pre>
                 </div>
                 <div class="container" style="margin-top: 2%">
                     <h3>4. Patik ni Debata</h3>
                 </div>
                 <div class="container" style="margin-top: 2%">
-                    <h3>5. Marende BE. No.182:1,3</h3>
-                    <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <h3>5. Marende {{ $tata->e3 }}</h3>
+                    <pre>{{ $tata->le3 }}</pre>
                 </div>
                 <div class="container" style="margin-top: 2%">
                     <h3>6. Manopoti Dosa</h3>
                 </div>
                 <div class="container" style="margin-top: 2%">
-                    <h3>7. Marende BE. No.428:1,2</h3>
-                    <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <h3>7. Marende {{ $tata->e4 }}</h3>
+                    <pre>{{ $tata->le4 }}</pre>
                 </div>
                 <div class="container" style="margin-top: 2%">
-                    <h3>8. Epister</h3>
-                    <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <h3>8. Epistel</h3>
+                    <pre>{{ $tata->epistel }}</pre>
                 </div>
                 <div class="container" style="margin-top: 2%">
-                    <h3>9. Marende BE. No.716:1,3</h3>
-                    <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <h3>9. Marende {{ $tata->e5 }}</h3>
+                    <pre>{{ $tata->le5 }}</pre>
                 </div>
                 <div class="container" style="margin-top: 2%">
                     <h3>10. Manghatindahon haporseaon</h3>
@@ -92,15 +92,15 @@
                     <h3>11. Tingting - Tangiang Pangondianan</h3>
                 </div>
                 <div class="container" style="margin-top: 2%">
-                    <h3>12. Marende BE. No.428:1,2</h3>
-                    <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <h3>12. Marende {{ $tata->e6 }}</h3>
+                    <pre>{{ $tata->le6 }}</pre>
                 </div>
                 <div class="container" style="margin-top: 2%">
-                    <h3>13. Jamita Psalmen 20:1-9</h3>
+                    <h3>13. Jamita {{ $tata->jamita }}</h3>
                 </div>
                 <div class="container" style="margin-top: 2%">
-                    <h3>14. Marende BE. No.848:1,2</h3>
-                    <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <h3>14. Marende {{ $tata->e7 }}</h3>
+                    <pre>{{ $tata->le7 }}</pre>
                 </div>
                 <div class="container" style="margin-top: 2%">
                     <h3>7. Tangiang Palean - Ale Amanami - Pasupasu</h3>
